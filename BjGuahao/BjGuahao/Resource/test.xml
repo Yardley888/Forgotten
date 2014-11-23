@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>北京市预约挂号统一平台</title>
+<link rel="icon" href="/comm/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/comm/images/favicon.ico" type="image/x-icon" />
+<link href="http://img.bjguahao.gov.cn/css/all_v2.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/comm/css/jquery.autocomplete.css" type="text/css" />
+<script type="text/javascript" src="/comm/css/jquery.tools.minmid.js"></script>
+<script type="text/javascript" src="/comm/css/hospitalslist.js?d=121116"></script>
+<script type="text/javascript" src="/comm/css/guahao5.js"></script>
+
+</head>
+<body>
+<div style="DISPLAY: none" id=goTopBtn><img border=0 src="http://img.bjguahao.gov.cn/images/v2_top.gif" alt="回到顶部" width="32" height="21"></div>
+<script type=text/javascript>goTopEx();</script>
+<div class="top" id='top_loginform'></div>
+<div class="header">
+<div class="searchright">
+<form method='get' name='search' action='/comm/list.php'onsubmit='return checkwords();'>
+<div class="search">
+
+<div class="option" onclick="wValDisp('h','yyk');"><span id="wn_h">医院</span></div>
+<div class="sbox"><input name="words" type="text" id="words"
+	maxlength="30" /></div>
+<div class="sbtn"><input type="submit" value=""
+	style="letter-spacing: -1px;" /></div>
+
+
+<div id="sbArea_h" style="display:none;">
+			<a target="_self" href="javascript:wValChg('ksk','h');"><div class="dselObj" id="wv_h_2">科室</div></a>
+			<a target="_self" href="javascript:wValChg('jbk','h');"><div class="dselObj" id="wv_h_4">疾病</div></a>
+			<a target="_self" href="javascript:wValChg('yyk','h');"><div class="dselObj" id="wv_h_1">医院</div></a>
+		</div>
+</div>
+</form>
+</div>
+</div>
+<div class="menu">
+<div class="submenu">
+<ul id="menuList">
+	<li><a href="/comm/index.html" class="bg02">首页</a></li>
+	<li style="width: 1px;"><img src="http://img.bjguahao.gov.cn/images/v2_menuline.gif"
+		width="1" height="39" /></li>
+	<li><a href="/comm/list.html" class="bg02">按医院预约</a></li>
+	<li style="width: 1px;"><img src="http://img.bjguahao.gov.cn/images/v2_menuline.gif"
+		width="1" height="39" /></li>
+	<li><a href="/comm/ksfl.html" class="bg02">按科室预约</a></li>
+	<li style="width: 1px;"><img src="http://img.bjguahao.gov.cn/images/v2_menuline.gif"
+		width="1" height="39" /></li>
+	<li><a href="/comm/list/disease.html" class="bg02">按疾病预约</a></li>
+	<li style="width: 1px;"><img src="http://img.bjguahao.gov.cn/images/v2_menuline.gif"
+		width="1" height="39" /></li>
+	<li><a href="/comm/yyzn.php" class="bg02">预约指南</a></li>
+	<li style="width: 1px;"><img src="http://img.bjguahao.gov.cn/images/v2_menuline.gif"
+		width="1" height="39" /></li>
+	<li><a href="/comm/notice/zxgg.html" class="bg02">最新公告</a></li>
+	<li style="width: 1px;"><img src="http://img.bjguahao.gov.cn/images/v2_menuline.gif"
+		width="1" height="39" /></li>
+	<li><a href="/comm/yjfk.php" class="bg02">意见反馈</a></li>
+</ul>
+</div>
+<div class="help">
+<div id="nav">
+<ul>
+	<li class="hmenu2" onmouseover="this.className='hmenu1'"
+		onmouseout="this.className='hmenu2'"><a href="/comm/help.php" target="_blank"><img
+		src="http://img.bjguahao.gov.cn/images/v2_help.gif" width="110" height="26" border="0" /></a>
+	<div class="hlist"><a href="/comm/zczn.php">注册指南</a><br />
+	<a href="/comm/yyzn.php">预约指南</a><br />
+	<a href="/comm/zhgl.php">帐号管理</a><br />
+	<a href="/comm/cjwt.php">常见问题</a><br />
+
+	</div>
+	</li>
+</ul>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	$(function() {
+		//首部登陆
+		$.get("/comm/plus/ajax_user.php", {
+			"act" : "top_loginform"
+		}, function(msg) {
+			var data=msg.split('|');
+			$("#top_loginform").html(data[1]);
+			$("#denglu").click(function(){
+				$("#apple").overlay().load();
+			})
+		});
+		complete(hospitals);
+		$("#apple").overlay({mask:{
+	        color: '#000',
+	        loadSpeed: 200,
+	        opacity: 0.3
+	      },
+		effect: 'apple'});
+})
+</script>
+<div class="apple_overlay" id="apple">
+	<div class="register_box">
+	<div class="register_ts" id="result"></div>
+	<ul>
+	<li><p>姓　名：</p><span class="register_bg"><input id="truename" type="text" class="register_input" /></span></li>
+	<li><p>证件号：</p><span class="register_bg"><input id="sfzhm" type="text" class="register_input" /></span></li>
+	<li><p>验证码：</p><span class="register_bg03"><input id="yzm" type="text" class="register_inputa" />
+	  <img id="yzmdl" src="/comm/code.php" width="50" height="19" align="absmiddle"  class="register_yzm"/> <a href="javascript:void(0)" class="red" onclick="return  refreshlog(document.getElementById('yzmdl'));">换一张</a></span></li>
+	<li style="margin-top:20px;"><a href="javascript:void(0)" onclick="sublogin()"><img src="http://img.bjguahao.gov.cn/images/v2_logindl.gif" width="90" height="30" /></a>  <a href="reg.php"><img src="http://img.bjguahao.gov.cn/images/v2_loginzc.gif" width="90" height="30" /></a></li>
+	</ul>
+	</div>
+</div>
+<div class="blank8"></div><link href="css/chaxun.css" rel="stylesheet" type="text/css" />
+<div class="listtop">
+<span>
+<ul id="menuList1">
+<li><a href="yyks.php?hpid=142" class="bg04">医院信息</a></li>
+<li><a href="yyxz.php?hpid=142" class="bg04">预约须知</a></li>
+<li><a href="yycx.php?hpid=142" class="bg04">查询/取消预约</a></li>
+<li><a href="stop.php?hpid=142" class="bg04">停诊信息</a></li>
+</ul>
+</span><label><a href="javascript:void(0)" onclick='applyContent(142)' class="org1">设为关注医院</a>　　<a href="list.html" class="blue1 b">[选择其他医院]</a></label>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+<script type="text/javascript">
+var currentUrl = location.href;
+var nescafe=true;
+jQuery(function($){
+	$("#menuList1 a").attr("class","bg04");
+	$("#menuList1 a").each(function(){
+		var tmpUrl = $(this).attr("href") ;
+		if(-1 != currentUrl.indexOf(tmpUrl) ){
+			$(this).attr("class","bg03");
+			return;
+		}
+	});
+	$(".islogin").click(function(){
+		$.ajax({
+			type:'get',
+			url:'/comm/plus/ajax_user.php',
+			data:"act=top_loginform",
+			async:false,
+			success:function(msg) {
+				var data=msg.split('|');
+				if(data[0]=='false'){
+					nescafe=false;
+				}
+			}
+		});
+		if(nescafe==false){
+			$("#apple").overlay().load();
+			return false;
+		}
+	})
+	$("#gm-ditu").overlay({mask:{
+	        color: '#000',
+	        loadSpeed: 200,
+	        opacity: 0.3
+	      },
+	      finish:{top: 100,left: 'center',absolute: true},
+		effect: 'default'})
+	$("a[rel='#gm-ditu']").click(function(){
+		$("#gm-ditu").overlay().load();
+	})
+	
+});
+function applyContent(a){
+	$.ajax({
+		url:'favhosp.php',
+		type:'GET',
+		data:"type=1&hpid="+a,
+		success:function(msg){
+			alert(msg);
+		}
+	})	
+}
+</script>
+<div class="listbox">
+
+<div class="hospital">
+  <p>北京大学第三医院</p>
+<label><strong>等级：</strong>三级甲等<strong>区域：</strong>海淀区<strong>分类：</strong>北京大学附属医院</label></div>
+<div class="notes">
+<img src="img/142.jpg" width="180" height="135" />
+<span><li>联系地址：北京市海淀区花园北路49号；[第二门诊部]北京海淀区西三旗育新小区内23号楼；[中央党校院区]北京市海淀区大有庄100号(北五环肖家河桥西侧辅路)</li>
+    <li>医院网址：<a target='_blank' href='http://www.bysy.edu.cn/'>http://www.bysy.edu.cn/</a></li>    
+    <li>交通指南： 本院：331路、609路、484路、323快北医三院下车；第二门诊部：355路 379路 393路 398路 693路在育新小区下车；中央党校院区：534路、498路、562路，到中央党校北门站下车往东50米；更多乘车路线详见须知  </li> </span></div>
+<div class="yybox">
+<div class="yyleft">
+<div class="yytitle"><p>重要提示</p></div>
+<div class="yytext">
+<strong>1.预约周期：</strong>7天<strong>　　2.放号时间：</strong>09:30<br />
+<strong>3.停挂时间：</strong>下午15:00停止次日预约挂号 （周五15:00后停挂至下周一）<br />       
+<strong>4.退号时间：</strong>就诊前一工作日15:00前取消<br />
+<strong> 5.特殊规则：</strong><br />
+①&nbsp; 无就医卡的患者取号前须先到我院门诊发卡中心办理我院就医卡，医保患者须在办卡的同时提供社保卡进行关联；<br />
+②&nbsp; 【生殖中心】只看女性患者；<br />
+③&nbsp; 我院的预约取号地点有多个，请按照预约成功短信提示或者预约须知里注明的地点取号就诊。</div>
+
+<div class="yytitle"><p>开放预约科室</p></div>
+<!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">内科<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1010101'>心血管科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1170101|0000062'>神经科门诊-帕金森病专业门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010101|0000015'>心血管科门诊-高血压门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010101|0000009'>心血管科门诊-冠心病介入随访门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010101|0000017'>心血管科门诊-房颤门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010101|0000013'>心血管科门诊-起搏器随访门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010101|0000019'>心血管科门诊-心力衰竭门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010301|0000046'>呼吸门诊-肺癌专科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010112'>心血管科门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010201'>内分泌门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010203'>内分泌门诊(特需)</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010301'>呼吸门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010301|0000003'>呼吸门诊-鼾症(睡眠呼吸疾病）门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010301|0000005'>呼吸门诊-慢性阻塞性肺病（COPD)门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010307'>呼吸门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010401'>血液病门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010406'>血液门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010501'>肾内门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010506'>肾内门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1170101'>神经科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010604'>肝炎门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010701'>风湿免疫门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1010703'>风湿免疫门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1110101'>皮肤科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1110105'>皮肤科门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1130101'>职业病门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1140101'>肿瘤化疗与放射病门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1130105'>职业病门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1160101'>消化科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1160107'>消化科门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1170101|0000031'>神经科门诊-脑血管病门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1170101|0000023'>神经科门诊-神经病理性疼痛门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1170101|0000024'>神经科门诊-睡眠障碍门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1170109'>神经科门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1040101'>老年病内科门诊</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 --><!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">外科<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1020101'>普外门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020108'>肛肠门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020109'>普外门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020301|0000058'>泌尿外科门诊-肾移植门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020201'>神经外科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020203'>神经外科门诊(特需)</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020301'>泌尿外科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020307'>泌尿外科门诊(特需)</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020401'>胸外科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020501'>骨科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020510'>骨科门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020803'>介入血管外科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1020901'>心脏外科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1120101'>成形科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1150101'>运动医学门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1150107'>运动医学门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=2050000'>康复医学中心</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=2050107'>骨质疏松门诊</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 --><!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">妇产科<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1060113'>计划生育(特需)</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060101'>妇科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060101|0000066'>妇科门诊-术后复查</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060102|0000064'>产科门诊-营养专科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060101|0000050'>妇科门诊-更年期专科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060102'>产科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060101|0000054'>妇科门诊-慢性盆腔痛门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060110'>妇科门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060111'>产科门诊（特需）</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060112'>计划生育门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1060101|0000033'>妇科门诊-阴道镜门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1240000'>生殖医学中心</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 --><!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">儿科<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1070101'>儿科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1070109'>儿科门诊（特需）</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 --><!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">眼科<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1080101'>眼科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1080106'>眼科门诊（特需）</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 --><!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">口腔科<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1100101'>口腔科门诊</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 --><!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">耳鼻喉科<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1200101'>耳鼻喉科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1200103'>耳鼻喉科门诊(特需)</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 --><!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">中医科<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1190101'>中医科门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1190102'>针灸门诊</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1190103'>中医科门诊（特需）</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 --><!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">第二门诊部<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1220103'>第二门诊部内科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220104'>第二门诊部内分泌科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220105'>第二门诊部心血管科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220106'>第二门诊部神经科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220108'>第二门诊部外科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220110'>第二门诊部妇科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220111'>第二门诊部儿科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220112'>第二门诊部口腔科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220113'>第二门诊部耳鼻喉科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220114'>第二门诊部皮肤科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220115'>第二门诊部眼科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220116'>第二门诊部针灸科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1220117'>第二门诊部中医科</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 --><!--科室开始 -->
+					<div class="yyksbox">
+					<div class="yyksdl">中央党校院区<br /></div>
+					<div class="yyksxl">
+					<div class="ks_content">
+					<ul><li><a class='islogin' href='./content.php?hpid=142&keid=1260400'>南区内科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260410'>南区心血管内科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260801'>南区口腔修复科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260420'>南区呼吸内科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260430'>南区消化内科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260440'>南区神经科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260460'>南区内分泌科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260470'>南区肾内科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260475'>南区风湿免疫科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260476'>南区肿瘤科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260510'>南区康复科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260520'>南区骨科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260600'>南区妇科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260800'>南区口腔科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260900'>南区中医科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1261500'>南区皮肤科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1261600'>南区耳鼻喉科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1261700'>南区眼科</a></li><li><a class='islogin' href='./content.php?hpid=142&keid=1260530'>南区泌尿科</a></li></ul>
+								     	<p class="clear"></p>
+								     	</div>     
+								    </div>
+								</div>
+								<!--科室结束 -->
+</div>
+<!--右侧开始 -->
+<SCRIPT type=text/javascript>
+var num=3;
+function getObj(objName){return(document.getElementById(objName));}
+function tag1(id)
+{
+	for(var i=1;i<=num;i++)
+	{
+		if(i==id) 
+		{
+			getObj("changebox1"+i).className="search5";
+			getObj("produce1"+i).style.display="";
+		}
+		else
+		{
+		getObj("produce1"+i).style.display="none";
+		getObj("changebox1"+i).className="search6";
+		 
+		 }
+	}
+}
+  </SCRIPT>
+
+<div class="yyright">
+  <!--  <img src="images/v2_map.gif" width="250" height="212" />-->
+  <a href='javascript:;' rel="#gm-ditu">
+ <img src="http://api.map.baidu.com/staticimage?width=250&height=212&center=116.367032,39.987929&zoom=14&markers=116.367032,39.987929"  alt="北京大学第三医院"/>
+ </a>
+<div class="tjlm">
+  <ul>
+  <li id=changebox11 onMouseOver=javascript:tag1(1) class=search5>同级医院</li>
+  <li style="width:4px;height:31px;border-bottom:1px #4DAAE3 solid;"></li>
+  <li id=changebox12 onMouseOver=javascript:tag1(2) class=search6>同区域医院</li>
+  <li style="width:3px;height:31px;border-bottom:1px #4DAAE3 solid;"></li>
+   <li id=changebox13 onMouseOver=javascript:tag1(3) class=search6>同类别医院</li>
+   <li style="width:79px;height:31px;border-bottom:1px #4DAAE3 solid;"></li>
+   </ul>
+  
+  </div>
+     <div class="tuijian" style="display:none" id=produce11>
+     <ul>
+     		<li><a href="yyks.php?hpid=1">北京协和医院</a></li>
+			<li><a href="yyks.php?hpid=120">北京大学人民医院</a></li>
+			<li><a href="yyks.php?hpid=106">首都医科大学附属北京世纪坛医院</a></li>
+			<li><a href="yyks.php?hpid=128">武警总医院</a></li>
+			<li><a href="yyks.php?hpid=135">北京中医药大学东直门医院</a></li>
+	     </ul> 
+     </div>  
+     <div class="tuijian" style="display:none" id=produce12>
+     <ul>
+        		<li><a href="yyks.php?hpid=119">中国中医科学院西苑医院</a></li>
+				<li><a href="yyks.php?hpid=162">中国人民解放军总医院(301医院)</a></li>
+				<li><a href="yyks.php?hpid=128">武警总医院</a></li>
+				<li><a href="yyks.php?hpid=221">北京市中西医结合医院</a></li>
+				<li><a href="yyks.php?hpid=225">北京市中关村医院</a></li>
+		     </ul> 
+     </div> 
+     <div class="tuijian" style="display:none" id=produce13>
+     <ul>
+     		<li><a href="yyks.php?hpid=12">北京大学第一医院</a></li>
+			<li><a href="yyks.php?hpid=120">北京大学人民医院</a></li>
+			<li><a href="yyks.php?hpid=150">北京大学首钢医院</a></li>
+			<li><a href="yyks.php?hpid=228">北京大学医院</a></li>
+			<li><a href="yyks.php?hpid=133">北京大学口腔医院（魏公村总院)</a></li>
+	     </ul> 
+      
+     </div> 
+     
+<script language="javascript">
+tag1(1);
+</script>
+</div>
+<!--右侧结束 -->
+
+ </div>
+ </div>
+ 
+<style type="text/css">
+.gm-box{width:506px;display:none;position:absolute;background:#fff;margin-left:-0px;-webkit-box-shadow:0 0 10px #333;-moz-box-shadow:0 0 10px #333;box-shadow:0 0 10px #333;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
+.gm-box{z-index:6000}
+.gm-box .title{background:#97c5ec;position:relative;padding:0 10px;margin:6px;overflow:hidden;color:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:14px;font-weight:normal;line-height:26px;height:26px}
+.gm-box .title a.close{position:absolute;right:6px;top:5px;height:15px;width:15px;background:url("./images/popup.png") no-repeat 0 -195px}
+.gm-box .title a.close:hover{background-position:0 -220px}
+.gm-box .body{padding:6px}
+.gm-box .body {text-align:center}
+#gm-msg{width:420px;margin-left:-0px}
+#gm-ditu{width:760px;margin-left:-0px}
+#gm-ditu #ditu{border:1px solid #ccc;height:380px;width:720px;padding:1px;margin:0 auto;}
+</style>
+      
+<div class="gm-box" id="gm-ditu">
+	<div class="title">
+	<span>北京大学第三医院</span>
+		<a class="close gm-close" href="javascript:;"></a>
+	</div>
+	<div class="body">
+		<div id="ditu"></div>
+	</div>
+</div>
+
+<script type='text/javascript'>
+var map = new BMap.Map("ditu");                        // 创建Map实例
+map.centerAndZoom(new BMap.Point(116.367032,39.987929), 14);     // 初始化地图,设置中心点坐标和地图级别
+map.addControl(new BMap.NavigationControl());               // 添加平移缩放控件
+map.addControl(new BMap.ScaleControl());                    // 添加比例尺控件
+map.addControl(new BMap.OverviewMapControl());              //添加缩略地图控件
+map.addControl(new BMap.MapTypeControl());          //添加地图类型控件
+map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+var marker1 = new BMap.Marker(new BMap.Point(116.367032,39.987929));  // 创建标注
+map.addOverlay(marker1);              // 将标注添加到地图中
+var opts = {
+	  width : 300,     // 信息窗口宽度
+	  height: 100,     // 信息窗口高度
+	  title : "<font size=2>北京大学第三医院</font>"  // 信息窗口标题
+	}
+	var infoWindow = new BMap.InfoWindow("<font size=2>联系电话:本院：010-82266699,第二门诊部:010-82951077(总机),中央党校:010-62805254 <br />联系地址：北京市海淀区花园北路49号；[第二门诊部]北京海淀区西三旗育新小区内23号楼；[中央党校院区]北京市海淀区大有庄100号(北五环肖家河桥西侧辅路)</font>", opts);  // 创建信息窗口对象
+	map.openInfoWindow(infoWindow,new BMap.Point(116.367032,39.987929)); //开启信息窗口
+	marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow);});
+	if(navigator.userAgent.indexOf("MSIE")>0){ 
+			map.panBy(305,165);
+	}
+</script>
+<div class="footbg">
+<div class="foot">
+<div class="foot_logo"><div class="foot_logo1"><a href="http://www.bjhb.gov.cn/" target="_blank"></a></div><div class="foot_logo2"><a href="http://www.114menhu.com/" target="_blank"></a></div></div>
+<p><a href="/comm/lxwm.php">联系我们</a> ┊  <a href="/comm/hzhb.php">合作伙伴</a> ┊  <a href="/comm/flsm.php">法律声明</a> ┊  <a href="/comm/fwxy.php">服务协议</a> ┊  <a href="/comm/yjfk.php">意见反馈</a> Copyright 2011-2013版权所有.  <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备05056889号</a></p>
+</div>
+</div>
+<span id="scrolltop" onclick="window.scrollTo('0','0')"  class="hidden"></span>
+
+<script type='text/javascript'>
+
+			var _hmt = _hmt || [];
+			(function() {
+				
+				// baidu
+				var hm = document.createElement("script");hm.type = 'text/javascript'; hm.async = true;
+				hm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'hm.baidu.com/hm.js?13e29334f151c8514bf6cf2533b9d9af';
+				var s = document.getElementsByTagName("script")[0]; 
+				s.parentNode.insertBefore(hm, s);
+				
+				//miaozhen
+				var c = document.createElement('script'); c.type = 'text/javascript';c.async = true;
+				c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'sitemonitor.cn.miaozhen.com/boot/45359';
+				var h = document.getElementsByTagName('script')[0];
+				h.parentNode.insertBefore(c, h);
+			
+			})();
+
+</script>
+
+</body>
+</html>

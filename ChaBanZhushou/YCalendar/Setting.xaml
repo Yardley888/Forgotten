@@ -1,0 +1,94 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing" 
+    x:Class="YCalendar.Setting"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </phone:PhoneApplicationPage.Foreground>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="设置" Style="{StaticResource PhoneTextNormalStyle}" FontSize="25"/>
+        </StackPanel>
+
+        <!--ContentPanel - 在此处放置其他内容-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+            <StackPanel>
+
+                <toolkit:ListPicker Header="选择班次" Name="ClassPicker">
+                    <toolkit:ListPickerItem  Content="甲班"/>
+                    <toolkit:ListPickerItem Content="乙班"/>
+                    <toolkit:ListPickerItem Content="丙班"/>
+                </toolkit:ListPicker>
+                
+                <toolkit:ToggleSwitch Margin="0 20 0 0" x:Name="alarmSwitch" Header="白班闹铃"  VerticalAlignment="Top"  Content="关"  Checked="ToggleSwitch_Checked" Unchecked="ToggleSwitch_Unchecked" />
+
+                <TextBlock HorizontalAlignment="Left" Margin="14,0,0,0"  TextWrapping="Wrap" Text="闹铃时间" VerticalAlignment="Top" Foreground="#FFC4C1C1"/>
+                <toolkit:TimePicker IsEnabled="False" x:Name="timePicker" HorizontalAlignment="Left"  Height="60" Width="427" Value="06:00:00"/>
+
+                <TextBlock HorizontalAlignment="Left" Margin="14 30 0 0" TextWrapping="Wrap" Text="铃声选择" VerticalAlignment="Bottom" Foreground="#FFA9A7A7"/>
+                <StackPanel Orientation="Horizontal">
+                <toolkit:ListPicker IsEnabled="False"  DataContext="{Binding}" SelectionChanged="SongPick_Changed" x:Name="songListPicker" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="280">
+                    <toolkit:ListPicker.FullModeItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding SongName}" FontSize="30" />
+                        </DataTemplate>
+                    </toolkit:ListPicker.FullModeItemTemplate>
+                </toolkit:ListPicker>
+                    <Grid >
+                <Button Margin="0 10" Name="btnCon" Height="74" IsEnabled="False" Click="Song_Button_Click" Width="140" Content="试听" BorderThickness="1" BorderBrush="DarkGray" />
+                <es:RegularPolygon  x:Name="p" Fill="#FF8C8C8C" HorizontalAlignment="Right" Height="21.549" InnerRadius="1"  PointCount="3" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" VerticalAlignment="Bottom" Width="21.439" RenderTransformOrigin="0.8,0.377" Margin="0,0,16.142,37.429">
+                    <es:RegularPolygon.RenderTransform>
+                        <CompositeTransform Rotation="88.278" TranslateX="-4.624" TranslateY="12.228"/>
+                    </es:RegularPolygon.RenderTransform>
+                </es:RegularPolygon>
+                <Rectangle  x:Name="s" Fill="#FF8C8B8B" HorizontalAlignment="Right" Height="18"  Stroke="Black" VerticalAlignment="Bottom" Width="18" Margin="0,0,19,37" />
+                    </Grid>
+                </StackPanel>
+                
+                <TextBlock Margin="10,30,10,0" TextWrapping="Wrap" Foreground="DarkGray" FontSize="16"><Run Text="相关说明："/><LineBreak/><Run Text=" "/><Run Text="     主页面日历表内,亮色日期表示白班，暗色日期表示"/><Run Text="夜班。"/><LineBreak/><Run Text="      "/><Run Text="白班闹铃开启时，每逢白班工作日将自动闹铃。"/><LineBreak/><Run Text="      "/><Run Text="如有问题请联系作者。"/><LineBreak/><Run/></TextBlock>
+                <StackPanel Height="100" Orientation="Horizontal">
+                	<TextBlock TextWrapping="Wrap" Text="作者Email：" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="179,0,0,0" Foreground="#FFB8B6B6" FontSize="16"/>
+                	<HyperlinkButton Content="huspace999@gmail.com" Margin="0" HorizontalAlignment="Right" Foreground="#FFD6D6D6" FontSize="16" Click="HyperlinkButton_Click" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <MediaElement CurrentStateChanged="PalyerStateChanged" AutoPlay="False" x:Name="SongPlayer" Width="0" Height="0" />
+
+        <Grid Name="TopGrid" Visibility="Collapsed" Grid.RowSpan="10" Grid.ColumnSpan="10" Background="#7E000000" >
+            <TextBlock x:Name="waitTb" Margin="20,0,0,178" Text="正在应用设置.." FontSize="16" VerticalAlignment="Bottom" Visibility="Collapsed" />
+            <toolkit:PerformanceProgressBar Margin="20,0,102,163" x:Name="progressBar" Height="13" VerticalAlignment="Bottom" Width="358"/>
+
+        </Grid>
+
+    </Grid>
+
+    <!--<phone:PhoneApplicationPage.ApplicationBar >
+        <shell:ApplicationBar Mode="Default" IsVisible="True" IsMenuEnabled="True" Opacity="0">
+            <shell:ApplicationBarIconButton Click="SaveButton_Click"  IconUri="/Assets/AppBar/appbar.save.rest.png" Text="保存"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

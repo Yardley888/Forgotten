@@ -1,0 +1,70 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="FileManager.View.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+
+        <!--ContentPanel - 在此处放置其他内容-->
+        <Grid x:Name="ContentPanel" Margin="12,0,12,0">
+            <TextBlock TextWrapping="Wrap">
+            	<Run FontSize="24" Text="SD卡支持文件类型说明"/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="可以直接识别的文件类型：[ .pdf .rar .flv .epub .rmvb ]"/>
+            	<LineBreak/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="可以间接识别的文件类型："/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="[ .txty .mp3y .mp4y .wmvy .aviy .xlsy .xlsxy .docy"/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text=" .docxy .ppty .pptxy .jpgy .pngy .bmpy .zipy ]"/>
+            	<LineBreak/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="间接支持的文件，指的是在标准后缀名添加字母'y',然后复制进SD卡根目录或自定义文件夹内。"/>
+            	<LineBreak/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="windows平台批量修改文件夹内相关文件后缀的方法："/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="1.在当前文件夹内,新建记事本，输入以下简单命令行"/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="ren *.txt  *.txty"/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="2.保存为后缀名为.bat文件."/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="3.双击运行,修改完成."/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="4.复制进SD卡."/>
+            	<LineBreak/>
+            	<Run FontSize="21.333"/>
+            	<LineBreak/>
+            	<Run FontSize="21.333"/>
+            	<LineBreak/>
+            	<Run FontSize="21.333" Text="本应用"/>
+            	<Run FontSize="21.333" Text="将不断完善，望大家支持，给予五星好评。"/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run Text=""/>
+            	<LineBreak/>
+
+            </TextBlock>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

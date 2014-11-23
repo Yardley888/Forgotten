@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <hospital link="yyks.php?hpid=142" name="北京大学第三医院" level="三级甲等" address="北京市海淀区花园北路49号；[第二门诊部]北京海淀区西三旗育新小区内23号楼；[中央党校院区]北京市海淀区大有庄100号(北五环肖家河桥西侧辅路)" hpid="142" district="海淀区" />
+  <hospital link="yyks.php?hpid=143" name="卫生部北京医院" level="三级甲等" address="北京市东单大华路1号" hpid="143" district="东城区" />
+  <hospital link="yyks.php?hpid=150" name="北京大学首钢医院" level="三级合格" address="北京市石景山区晋元庄路9号" hpid="150" district="石景山区" />
+  <hospital link="yyks.php?hpid=152" name="北京军区总医院" level="三级甲等" address="[本院]北京东城区东四十条南门仓5号;[东区]北京朝阳区农展北路8号" hpid="152" district="东城区" />
+  <hospital link="yyks.php?hpid=156" name="中国中医科学院眼科医院" level="三级中医医院" address="北京市石景山区鲁谷路33号" hpid="156" district="石景山区" />
+  <hospital link="yyks.php?hpid=157" name="解放军306医院" level="三级甲等" address="北京市朝阳区德外安翔北路9号" hpid="157" district="朝阳区" />
+  <hospital link="yyks.php?hpid=158" name="解放军第302医院" level="三级甲等传染病医院" address="北京市丰台区西四环中路100号" hpid="158" district="丰台区" />
+  <hospital link="yyks.php?hpid=159" name="解放军第二六三医院" level="二级甲等" address="北京市通州区永顺南街141号" hpid="159" district="通州区" />
+  <hospital link="yyks.php?hpid=160" name="北京市宣武中医医院" level="三级乙等" address="北京市西城区（原宣武区）万明路甲8号" hpid="160" district="西城区" />
+  <hospital link="yyks.php?hpid=162" name="中国人民解放军总医院(301医院)" level="三级甲等" address="北京市海淀区复兴路28号" hpid="162" district="海淀区" />
+  <hospital link="yyks.php?hpid=163" name="北京市昌平区医院" level="二级甲等综合医院" address="北京市昌平区昌平镇鼓楼北街9号" hpid="163" district="昌平区" />
+  <hospital link="yyks.php?hpid=165" name="北京市怀柔区第一医院" level="二级甲等" address="北京市怀柔区第一医院（怀柔区青春路1号）" hpid="165" district="怀柔区" />
+  <hospital link="yyks.php?hpid=166" name="航空总医院" level="二级甲等" address="北京市朝阳区安外北苑路3号院" hpid="166" district="朝阳区" />
+  <hospital link="yyks.php?hpid=167" name="北京市顺义区医院" level="二级甲等医院" address="北京市顺义区光明南街3号" hpid="167" district="顺义区" />
+  <hospital link="yyks.php?hpid=168" name="北京市东城区第二妇幼保健院（原崇文区妇幼保健院）" level="二级甲等专科医院" address="北京市崇文区法华南里25号楼" hpid="168" district="崇文区" />
+  <hospital link="yyks.php?hpid=169" name="北京市鼓楼中医医院" level="二级甲等" address="北京东城区豆腐池胡同13号" hpid="169" district="东城区" />
+  <hospital link="yyks.php?hpid=170" name="首都医科大学附属北京口腔医院(王府井院区)" level="三级甲等" address="北京市东城区锡拉胡同11号" hpid="170" district="东城区" />
+  <hospital link="yyks.php?hpid=171" name="北京市顺义区空港医院" level="二级合格" address="顺义区后沙峪镇双裕街49号" hpid="171" district="顺义区" />
+  <hospital link="yyks.php?hpid=172" name="北京市平谷区中医医院" level="二级甲等中医院" address="北京平谷区平翔路6号（近处标志电视塔 ）" hpid="172" district="平谷区" />
+  <hospital link="yyks.php?hpid=173" name="北京市平谷区医院" level="二级甲等" address="北京市平谷区新平北路59号" hpid="173" district="平谷区" />
+  <hospital link="yyks.php?hpid=174" name="北京市顺义区中医医院" level="二级甲等中医医院" address="北京市顺义区站前东街5号" hpid="174" district="顺义区" />
+  <hospital link="yyks.php?hpid=175" name="北京中医药大学东直门医院东区（原北京市通州区中医医院）" level="三级甲等" address="北京市通州区翠屏西路116号" hpid="175" district="通州区" />
+  <hospital link="yyks.php?hpid=176" name="北京市和平里医院" level="二级甲等" address="北京市东城区和平里北街18号" hpid="176" district="东城区" />
+  <hospital link="yyks.php?hpid=177" name="北京市普仁医院" level="二级甲等" address="北京市东城区崇外大街100号" hpid="177" district="东城区" />
+  <hospital link="yyks.php?hpid=178" name="北京市第六医院" level="二级甲等" address="[本院]北京市东城区交道口北二条36号；[北院]北京市东城区东直门内大街184号北部" hpid="178" district="东城区" />
+  <hospital link="yyks.php?hpid=180" name="北京市东城区第一人民医院" level="二级合格" address="北京市东城区永外大街130号" hpid="180" district="东城区" />
+  <hospital link="yyks.php?hpid=181" name="北京市隆福医院" level="二级甲等" address="北京市东城区美术馆东街18号" hpid="181" district="东城区" />
+  <hospital link="yyks.php?hpid=182" name="北京市门头沟区中医医院" level="二级甲等中医医院" address="北京市门头沟区新桥南大街3号" hpid="182" district="门头沟区" />
+  <hospital link="yyks.php?hpid=183" name="北京市西城区广外医院" level="二级综合性医院" address="北京市西城区三义里甲2号" hpid="183" district="西城区" />
+  <hospital link="yyks.php?hpid=184" name="北京市健宫医院" level="二级甲等" address="北京市西城区菜市口南大街儒福里6号" hpid="184" district="西城区" />
+  <hospital link="yyks.php?hpid=185" name="北京市第二医院" level="二级甲等综合医院" address="北京市西城区宣武门内大街油坊胡同36号" hpid="185" district="西城区" />
+  <hospital link="yyks.php?hpid=186" name="北京市回民医院" level="二级甲等综合医院" address="北京市西城区右安门内大街11号" hpid="186" district="西城区" />
+  <hospital link="yyks.php?hpid=187" name="北京市西城区展览路医院" level="二级" address="北京市西城区西外大街桃柳园西巷16号" hpid="187" district="西城区" />
+  <hospital link="yyks.php?hpid=188" name="北京中医药大学附属护国寺中医医院" level="二级综合医院" address="西城区棉花胡同83号" hpid="188" district="西城区" />
+  <hospital link="yyks.php?hpid=189" name="北京市房山区良乡医院" level="二级甲等综合医院" address="北京市房山区良乡拱辰北大街45号" hpid="189" district="房山区" />
+  <hospital link="yyks.php?hpid=190" name="北京市房山区第一医院" level="二级甲等" address="北京市房山区城关房窑路6号" hpid="190" district="房山区" />
+  <hospital link="yyks.php?hpid=200" name="北京门头沟区医院" level="二级甲等" address="北京市门头沟区河滩桥东街10号门头沟区医院" hpid="200" district="门头沟区" />
+  <hospital link="yyks.php?hpid=202" name="北京市房山区中医医院" level="二级甲等中医医院" address="房山区城关镇南大街151号" hpid="202" district="房山区" />
+  <hospital link="yyks.php?hpid=203" name="中国核工业北京四0一医院" level="二级合格" address="" hpid="203" district="房山区" />
+  <hospital link="yyks.php?hpid=204" name="北京市上地医院" level="二级合格" address="北京市海淀区农大南路树村西街甲6号" hpid="204" district="海淀区" />
+  <hospital link="yyks.php?hpid=205" name="北京市朝阳区中医医院" level="二级甲等" address="北京市朝阳区工体南路6号" hpid="205" district="朝阳区" />
+  <hospital link="yyks.php?hpid=206" name="北京市怀柔区中医医院" level="二级甲等" address="北京市怀柔区后横街一号" hpid="206" district="怀柔区" />
+  <hospital link="yyks.php?hpid=207" name="北京市朝阳区双桥医院" level="二级综合" address="京通高速双会桥出口南转到双桥东路，沿双桥东路向南走2.7公里即到。" hpid="207" district="朝阳区" />
+  <hospital link="yyks.php?hpid=208" name="北京市石景山医院" level="二级甲等综合医院" address="北京市石景山路24号" hpid="208" district="石景山区" />
+  <hospital link="yyks.php?hpid=209" name="北京市朝阳区第二医院" level="二级甲等" address="北京市朝阳区金台路13号内2号" hpid="209" district="朝阳区" />
+  <hospital link="yyks.php?hpid=211" name="北京首都国际机场医院" level="二级甲等" address="北京市朝阳区机场南路东里11号" hpid="211" district="朝阳区" />
+  <hospital link="yyks.php?hpid=212" name="北京丰台医院(桥南部)" level="二级甲等" address="北京市丰台区丰台南路99号" hpid="212" district="丰台区" />
+  <hospital link="yyks.php?hpid=213" name="北京丰台医院(桥北部)" level="二级甲等" address="北京市丰台区丰台镇西安街1号" hpid="213" district="丰台区" />
+  <hospital link="yyks.php?hpid=214" name="北京市朝阳区第二医院东坝院区（原东坝医院）" level="二级医院" address="北京市朝阳区东坝乡东风大队二条" hpid="214" district="朝阳区" />
+  <hospital link="yyks.php?hpid=215" name="北京惠民中医儿童医院" level="一级专科" address="北京市东城区珠市口东大街4号1-B2" hpid="215" district="东城区" />
+  <hospital link="yyks.php?hpid=216" name="北京市朝阳区妇儿医院(妇幼保健院)" level="二级甲等专科医院" address="朝阳区潘家园华威里甲25号" hpid="216" district="朝阳区" />
+  <hospital link="yyks.php?hpid=217" name="北京市密云县中医医院" level="二级甲等中医院" address="北京市密云县新中街39号" hpid="217" district="密云县" />
+  <hospital link="yyks.php?hpid=218" name="北京市丰台区南苑医院" level="二级合格" address="北京市丰台区南苑公所胡同3号" hpid="218" district="丰台区" />
+  <hospital link="yyks.php?hpid=219" name="北京市丰台区铁营医院" level="二级合格" address="北京市丰台区永外横七条1号" hpid="219" district="丰台区" />
+  <hospital link="yyks.php?hpid=220" name="北京中医药大学第三附属医院" level="三级中西医结合医院" address="北京市朝阳区安定门外小关街51号" hpid="220" district="朝阳区" />
+  <hospital link="yyks.php?hpid=221" name="北京市中西医结合医院" level="二级甲等中西医结合医院" address="北京市海淀区永定路东街3号" hpid="221" district="海淀区" />
+  <hospital link="yyks.php?hpid=222" name="北京市密云县医院" level="二级甲等" address="密云县鼓楼北大街3号" hpid="222" district="密云县" />
+  <hospital link="yyks.php?hpid=223" name="北京市延庆县医院" level="二级甲等" address="北京市延庆县东顺城街28号" hpid="223" district="延庆县" />
+  <hospital link="yyks.php?hpid=224" name="北京市丰台区长辛店医院" level="二级乙" address="北京市丰台区长辛店东山坡三里甲60号" hpid="224" district="丰台区" />
+  <hospital link="yyks.php?hpid=225" name="北京市中关村医院" level="二级医院" address="海淀区中关村南路12号" hpid="225" district="海淀区" />
+  <hospital link="yyks.php?hpid=226" name="清华大学医院" level="二级" address="海淀区清华大学医院" hpid="226" district="海淀区" />
+  <hospital link="yyks.php?hpid=227" name="北京水利医院" level="二级甲等" address="海淀区玉渊潭南路19号" hpid="227" district="海淀区" />
+  <hospital link="yyks.php?hpid=228" name="北京大学医院" level="二级合格" address="北京市海淀区颐和园路5号北京大学医院" hpid="228" district="海淀区" />
+  <hospital link="yyks.php?hpid=229" name="北京工人疗养院(北京康复中心、北京市西山医院)" level="三级" address="北京市石景山区八大处西下庄" hpid="229" district="石景山区" />
+  <hospital link="yyks.php?hpid=230" name="北京市海淀医院" level="二级甲等" address="北京市海淀区中关村大街29号" hpid="230" district="海淀区" />
+  <hospital link="yyks.php?hpid=231" name="中国航天科工集团七三一医院" level="二级甲等" address="北京市丰台区云岗镇岗南里3号院" hpid="231" district="丰台区" />
+  <hospital link="yyks.php?hpid=232" name="北京延庆县中医医院" level="二级" address="延庆县新城街十一号" hpid="232" district="延庆县" />
+  <hospital link="yyks.php?hpid=233" name="北京市昌平区南口医院" level="昌平区南口医院属二级合格" address="北京市昌平区南口镇南辛路2号" hpid="233" district="昌平区" />
+  <hospital link="yyks.php?hpid=234" name="北京市石景山中医医院" level="二级综合医院" address="北京市石景山区八角北路,石景山区中医医院" hpid="234" district="石景山区" />
+  <hospital link="yyks.php?hpid=235" name="北京市昌平区中医医院" level="二级甲等中医医院" address="北京市昌平区东环路南段" hpid="235" district="昌平区" />
+  <hospital link="yyks.php?hpid=237" name="北京市昌平区沙河医院" level="二级合格" address="北京市昌平区扶京门路22号" hpid="237" district="昌平区" />
+  <hospital link="yyks.php?hpid=238" name="北京市昌平区南口铁路医院" level="二级综合" address="北京市昌平区南口镇新兴路8号" hpid="238" district="昌平区" />
+  <hospital link="yyks.php?hpid=239" name="北京市肛肠医院(二龙路医院)" level="二级甲等医院" address="(北院区)北京市西城区德外大街16号" hpid="239" district="西城区" />
+  <hospital link="yyks.php?hpid=240" name="北京市昌平区妇幼保健院" level="二级甲等专科医院" address="北京市昌平区北环路1号" hpid="240" district="昌平区" />
+  <hospital link="yyks.php?hpid=241" name="北京市昌平区华一医院" level="中西医结合三级医院" address="北京市昌平区回龙观文化小区霍营西" hpid="241" district="昌平区" />
+  <hospital link="yyks.php?hpid=242" name="北京市昌平区精神卫生保健院" level="二级合格" address="北京市昌平区沙河镇豆各庄1号" hpid="242" district="昌平区" />
+  <hospital link="yyks.php?hpid=244" name="东城区精神卫生保健院(东城区东外医院)" level="二级专科" address="东城区东直门外察慈小区7号楼" hpid="244" district="东城区" />
+  <hospital link="yyks.php?hpid=246" name="北京瑞京糖尿病医院" level="专科医院" address="北京市丰台区南三环分钟寺280号" hpid="246" district="丰台区" />
+  <hospital link="xiehe/yyks.php?hpid=1" name="北京协和医院" level="三级甲等" address="[东院]北京市东城区帅府园一号  [西院]北京市西城区大木仓胡同41号" hpid="1" district="东城区" />
+  <hospital link="beidaok/yyks.php?hpid=12" name="北京大学第一医院" level="三级甲等" address="北京市西城区西什库大街八号" hpid="12" district="西城区" />
+  <hospital link="yyks.php?hpid=105" name="首都医科大学附属北京同仁医院" level="三级甲等 " address="北京市东城区东交民巷1号(西区)北京市东城区崇文门内大街8号(东区)" hpid="105" district="东城区" />
+  <hospital link="yyks.php?hpid=123" name="北京同仁医院南院(亦庄院区)" level="三级甲等" address="北京经济技术开发区西环南路2号" hpid="123" district="通州区" />
+  <hospital link="yyks.php?hpid=17" name="北京肿瘤医院" level="三级甲等" address="北京市海淀区阜成路52号" hpid="17" district="海淀区" />
+  <hospital link="yyks.php?hpid=3" name="医科院肿瘤医院" level="三级甲等" address="北京市朝阳区潘家园南里17号" hpid="3" district="朝阳区" />
+  <hospital link="yyks.php?hpid=4" name="阜外心血管病医院" level="三级甲等" address="北京市西城区北礼士路167号" hpid="4" district="西城区" />
+  <hospital link="yyks.php?hpid=140" name="阜外心血管病医院特需" level="三级甲等" address="北京市西城区北礼士路167号" hpid="140" district="西城区" />
+  <hospital link="yyks.php?hpid=22" name="北京航天总医院" level="三级综合性医院" address="北京市丰台区东高地万源北路7号" hpid="22" district="丰台区" />
+  <hospital link="yyks.php?hpid=28" name="北京电力医院" level="三级" address="北京市丰台区太平桥西里甲1号" hpid="28" district="丰台区" />
+  <hospital link="ertong/yyks.php?hpid=34" name="首都医科大学附属北京儿童医院" level="三级甲等 " address="北京市西城区南礼士路56号" hpid="34" district="西城区" />
+  <hospital link="yyks.php?hpid=40" name="首都医科大学附属北京地坛医院" level="三级甲等" address="北京市朝阳区京顺东街8号" hpid="40" district="朝阳区" />
+  <hospital link="http://bjcyhnet.guahao114.com" name="北京朝阳医院本部" level="三级甲等" address="朝阳区工体南路8号" hpid="" district="朝阳区" />
+  <hospital link="yyks.php?hpid=121" name="北京朝阳医院西区(石景山)" level="三级甲等" address="石景山区京原路5号" hpid="121" district="石景山区" />
+  <hospital link="yyks.php?hpid=113" name="首都医科大学宣武医院" level="三级甲等" address="北京市西城区长椿街45号" hpid="113" district="西城区" />
+  <hospital link="yyks.php?hpid=5" name="北京大兴区妇幼保健院" level="二级甲等" address="北京大兴区兴丰大街三段（56号）；[亦庄分院]北京市朝阳区小红门三台山路甲1号。" hpid="5" district="朝阳区" />
+  <hospital link="yyks.php?hpid=7" name="北京大兴区红星医院" level="二级综合医院" address="北京市大兴区瀛海镇中兴南路3号" hpid="7" district="大兴区" />
+  <hospital link="yyks.php?hpid=8" name="大兴普祥中医肿瘤医院" level="二级" address="北京市亦庄经济技术开发区（100176-12分信箱）" hpid="8" district="通州区" />
+  <hospital link="yyks.php?hpid=9" name="北京市仁和医院" level="二级甲等综合医院" address="大兴区兴丰大街1号" hpid="9" district="大兴区" />
+  <hospital link="yyks.php?hpid=10" name="中国中医科学院广安门医院南区" level="三级甲等" address="北京市大兴区黄村兴丰北大街(二段)138号" hpid="10" district="大兴区" />
+  <hospital link="yyks.php?hpid=11" name="北京市大兴区精神病医院" level="二级甲等" address="北京市大兴区黄村镇黄良路口北侧" hpid="11" district="大兴区" />
+  <hospital link="yyks.php?hpid=20" name="清华大学玉泉医院" level="二级甲等" address="北京市石景山区石景山路5号" hpid="20" district="石景山区" />
+  <hospital link="yyks.php?hpid=125" name="海军总医院" level="三级甲等" address="北京市海淀区阜成路6号 " hpid="125" district="海淀区" />
+  <hospital link="yyks.php?hpid=100" name="首都医科大学附属北京天坛医院" level="三级甲等" address="北京市东城区天坛西里6号" hpid="100" district="东城区" />
+  <hospital link="yyks.php?hpid=102" name="首都儿科研究所附属儿童医院" level="三级甲等" address="北京市朝阳区雅宝路2号" hpid="102" district="朝阳区" />
+  <hospital link="yyks.php?hpid=103" name="北京大学第四临床医学院北京积水潭医院" level="三级甲等" address="北京西城区新街口东街31号 " hpid="103" district="北京西城区" />
+  <hospital link="yyks.php?hpid=104" name="首都医科大学附属北京妇产医院北京妇幼保健院东院" level="三级甲等" address="北京市朝阳区姚家园路251号（东院） " hpid="104" district="朝阳区" />
+  <hospital link="yyks.php?hpid=106" name="首都医科大学附属北京世纪坛医院" level="三级甲等" address=" 北京市海淀区羊坊店铁医院路10号" hpid="106" district="海淀区" />
+  <hospital link="yyks.php?hpid=107" name="首都医科大学附属北京胸科医院" level="三级甲等" address=" 北京市通州区马厂97号（京通快速路东口）" hpid="107" district="通州区" />
+  <hospital link="yyks.php?hpid=108" name="首都医科大学附属北京安贞医院" level="三级甲等" address="北京市朝阳区安贞路2号" hpid="108" district="朝阳区" />
+  <hospital link="yyks.php?hpid=109" name="首都医科大学附属北京口腔医院(天坛院区)" level="三级甲等 " address="天坛部:北京市东城区天坛西里4号；" hpid="109" district="东城区" />
+  <hospital link="yyks.php?hpid=133" name="北京大学口腔医院（魏公村总院)" level="三级甲等" address="【总院】北京市海淀区中关村南大街22号" hpid="133" district="海淀区" />
+  <hospital link="yyks.php?hpid=110" name="首都医科大学附属北京佑安医院" level="三级甲等 " address="北京市丰台区右安门外西头条8号 " hpid="110" district="丰台区" />
+  <hospital link="yyks.php?hpid=111" name="首都医科大学附属北京安定医院" level="三级甲等" address="北京市西城区德胜门外安康胡同5号" hpid="111" district="西城区" />
+  <hospital link="yyks.php?hpid=112" name="北京老年医院" level="三级丙等" address="北京海淀区温泉路118号" hpid="112" district="北京海淀区" />
+  <hospital link="yyks.php?hpid=114" name="首都医科大学附属北京友谊医院" level="三级甲等" address="北京市西城区永安路95号 " hpid="114" district="西城区" />
+  <hospital link="yyks.php?hpid=115" name="首都医科大学附属北京中医医院" level="三级甲等" address="北京市东城区美术馆后街23号" hpid="115" district="东城区" />
+  <hospital link="yyks.php?hpid=116" name="北京回龙观医院" level="三级甲等  " address="北京昌平回龙观；安定门门诊部:安定门内车辇店胡同甲35号；月坛门诊部：西城区月坛南街1号" hpid="116" district="昌平区" />
+  <hospital link="yyks.php?hpid=117" name="北京小汤山医院" level="三级丙等 " address="北京市昌平区小汤山镇" hpid="117" district="昌平区" />
+  <hospital link="yyks.php?hpid=118" name="首都医科大学附属北京妇产医院北京妇幼保健院西院" level="三级甲等" address="北京市东城区骑河楼街17号（西院）" hpid="118" district="东城区" />
+  <hospital link="yyks.php?hpid=119" name="中国中医科学院西苑医院" level="三级甲等" address=" 北京市海淀区西苑操场1号(颐和园东侧) " hpid="119" district="海淀区" />
+  <hospital link="yyks.php?hpid=135" name="北京中医药大学东直门医院" level="三级甲等 " address="北京市东城区海运仓5号" hpid="135" district="东城区" />
+  <hospital link="yyks.php?hpid=120" name="北京大学人民医院" level="三级甲等 " address="北京市西城区西直门南大街11号" hpid="120" district="西城区" />
+  <hospital link="yyks.php?hpid=122" name="中国中医科学院广安门医院" level="三级甲等" address="北京市西城区广安门内北线阁5号 " hpid="122" district="西城区" />
+  <hospital link="yyks.php?hpid=127" name="北京大学第六医院" level="三级甲等" address="北京市海淀区花园北路51号" hpid="127" district="海淀区" />
+  <hospital link="yyks.php?hpid=154" name="首都医科大学附属复兴医院" level="三级合格" address="北京市西城区月坛北街4号（复兴医院门诊部）" hpid="154" district="西城区" />
+  <hospital link="yyks.php?hpid=130" name="解放军二六一医院" level="三级" address="北京市海淀区上庄镇261医院" hpid="130" district="海淀区" />
+  <hospital link="yyks.php?hpid=129" name="空军总医院" level="三级甲等" address="北京市海淀区阜成路30号" hpid="129" district="海淀区" />
+  <hospital link="yyks.php?hpid=132" name="航天中心医院(原721医院)" level="三级合格" address="北京市海淀区玉泉路15号" hpid="132" district="海淀区" />
+  <hospital link="yyks.php?hpid=151" name="解放军总医院第一附属医院（304医院）" level="三级甲等综合性医院" address="北京市海淀区阜成路51号(航天桥西侧100米路北)" hpid="151" district="海淀区" />
+  <hospital link="yyks.php?hpid=149" name="解放军307医院" level="三级甲等医院" address="北京市丰台区东大街8号" hpid="149" district="丰台区" />
+  <hospital link="yyks.php?hpid=124" name="北京三博脑科医院" level="三级神经专科" address="北京市海淀区香山一棵松50号" hpid="124" district="海淀区" />
+  <hospital link="yyks.php?hpid=134" name="中国中医科学院望京医院" level="三级甲等中医医院" address="北京市朝阳区花家地街望京医院" hpid="134" district="朝阳区" />
+  <hospital link="yyks.php?hpid=144" name="解放军305医院" level="三级甲等 " address="北京市西城区文津街甲十三号" hpid="144" district="西城区" />
+  <hospital link="yyks.php?hpid=141" name="民航总医院" level="三级合格" address="北京市朝阳区朝外高井甲一号" hpid="141" district="朝阳区" />
+  <hospital link="yyks.php?hpid=146" name="中国医学科学院整形外科医院" level="三甲专科医院" address="北京市石景山八大处路33号" hpid="146" district="石景山区" />
+  <hospital link="yyks.php?hpid=148" name="北京中医药大学东方医院" level="三级甲等医院" address="北京丰台区方庄芳星园一区6号" hpid="148" district="北京丰台区" />
+  <hospital link="yyks.php?hpid=145" name="第二炮兵总医院" level="三级甲等" address="北京市西城区新街口外大街16号北京师范大学对面" hpid="145" district="西城区" />
+  <hospital link="yyks.php?hpid=139" name="北京燕化医院" level="三级合格医院" address="北京市房山区燕山迎风街15号" hpid="139" district="房山区" />
+  <hospital link="http://zrnet.guahao114.com/user1/index.html" name="中日友好医院" level="三级甲等" address="北京市朝阳区樱花东路2号" hpid="" district="朝阳区" />
+  <hospital link="yyks.php?hpid=131" name="煤炭总医院" level="三级综合医院" address="北京市朝阳区西坝河南里29号" hpid="131" district="朝阳区" />
+  <hospital link="yyks.php?hpid=128" name="武警总医院" level="三级甲等" address="北京市海淀区永定路69号" hpid="128" district="海淀区" />
+  <hospital link="yyks.php?hpid=136" name="武警北京总队医院" level="三级甲等" address="北京市朝阳区东三里屯一号院" hpid="136" district="朝阳区" />
+  <hospital link="yyks.php?hpid=137" name="武警北京总队第二医院" level="三级甲等" address="北京市西城月坛北街丁3号" hpid="137" district="西城区" />
+  <hospital link="yyks.php?hpid=138" name="武警北京总队第三医院" level="三级乙等" address="北京市丰台区小屯路10号" hpid="138" district="丰台区" />
+  <hospital link="yyks.php?hpid=153" name="北京博爱医院" level="三甲医院" address="北京市丰台区角门北路10号" hpid="153" district="丰台区" />
+  <hospital link="yyks.php?hpid=155" name="北京京煤集团总医院" level="三级合格" address="北京市门头沟区黑山大街18号" hpid="155" district="门头沟区" />
+  <hospital link="yyks.php?hpid=161" name="解放军第309医院" level="三级甲" address="北京市海淀区黑山扈甲17号" hpid="161" district="海淀区" />
+  <hospital link="yyks.php?hpid=164" name="北京市垂杨柳医院" level="二级甲等" address="北京市朝阳区垂杨柳南街2号" hpid="164" district="朝阳区" />
+  <hospital link="yyks.php?hpid=126" name="北京华信医院(清华大学第一附属医院)" level="三级" address="北京市朝阳区酒仙桥一街坊6号" hpid="126" district="朝阳区" />
+  <hospital link="yyks.php?hpid=6" name="北京大兴区人民医院" level="二级甲等" address="北京市大兴区黄村镇黄村西大街26号" hpid="6" district="大兴区" />
+  <hospital link="yyks.php?hpid=13" name="北京市通州区潞河医院" level="二级甲等医院" address="北京市通州区新华南路82号" hpid="13" district="通州区" />
+</root>

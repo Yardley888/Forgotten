@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="zh-CN" />
+  <App xmlns="" ProductID="{f7478e76-41cb-43e2-b7d9-22edfd9feae1}" Title="文件管理+" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="FileManager author" Description="Sample description" Publisher="FileManager" PublisherID="{961a6184-3f83-4211-923f-8f5da8bc32a4}">
+    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
+      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_REMOVABLE_STORAGE" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" ActivationPolicy="Resume" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="FileManagerToken" TaskName="_default">
+        <TemplateFlip>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <Count>0</Count>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
+          <Title>文件管理+</Title>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI>
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <DeviceLockImageURI>
+          </DeviceLockImageURI>
+          <HasLarge>
+          </HasLarge>
+        </TemplateFlip>
+      </PrimaryToken>
+    </Tokens>
+    <Extensions>
+      <FileTypeAssociation Name="文件关联描述信息" TaskID="_default" NavUriFragment="fileToken=%s">
+        <Logos>
+          <!--定义被关联文件类型显示徽标，大中小三种-->
+          <Logo Size="small" IsRelative="true">medium33x33.png</Logo>
+          <Logo Size="medium" IsRelative="true">medium69x69.png</Logo>
+          <Logo Size="large" IsRelative="true">large176x176.png</Logo>
+        </Logos>
+        <!--定义被关联文件扩展名-->
+        <SupportedFileTypes>
+          <FileType ContentType="application/myfile1">.pdf</FileType>
+          <FileType ContentType="application/myfile2">.rar</FileType>
+          <FileType ContentType="application/myfile3">.flv</FileType>
+          <FileType ContentType="application/myfile4">.epub</FileType>
+          <FileType ContentType="application/myfile5">.rmvb</FileType>
+          <FileType ContentType="application/myfile">.txty</FileType>
+          <FileType ContentType="application/myfile">.mp3y</FileType>
+          <FileType ContentType="application/myfile">.mp4y</FileType>
+          <FileType ContentType="application/myfile">.wmvy</FileType>
+          <FileType ContentType="application/myfile">.aviy</FileType>
+          <FileType ContentType="application/myfile">.xlsy</FileType>
+          <FileType ContentType="application/myfile">.xlsxy</FileType>
+          <FileType ContentType="application/myfile">.docy</FileType>
+          <FileType ContentType="application/myfile">.docxy</FileType>
+          <FileType ContentType="application/myfile">.ppty</FileType>
+          <FileType ContentType="application/myfile">.pptxy</FileType>
+          <FileType ContentType="application/myfile">.jpgy</FileType>
+          <FileType ContentType="application/myfile">.pngy</FileType>
+          <FileType ContentType="application/myfile">.bmpy</FileType>
+          <FileType ContentType="application/myfile">.zipy</FileType>
+        </SupportedFileTypes>
+      </FileTypeAssociation>
+    </Extensions>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
+  </App>
+</Deployment>
